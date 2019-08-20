@@ -74,7 +74,7 @@ export default {
   max-width: 400px;
   margin: 5rem auto;
   padding: 2.5rem;
-  background: #fff;
+  background: $pureWhite;
   border-radius: .5rem;
 
   h1 {
@@ -92,13 +92,13 @@ export default {
     }
 
     span {
-      color: #e74c3c;
+      color: $tomato;
     }
 
     input {
       margin-bottom: 2rem;
       padding: .5rem 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid $silver;
       border-radius: .25rem;
 
       &:last-of-type {
@@ -108,19 +108,19 @@ export default {
 
     p {
       margin: 0 0 2rem;
-      color: #34495e;
+      color: $midnightBlue;
       font-size: .75rem;
     }
 
     button {
       width: 33%;
       margin: 0 auto;
-      background: #2ecc71;
+      background: $emerald;
       margin-bottom: 2rem;
       border: none;
       border-radius: .25rem;
       padding: .5rem;
-      color: #fff;
+      color: $pureWhite;
       font-size: 1.25rem;
       cursor: pointer;
     }
@@ -128,10 +128,10 @@ export default {
 
   .login-footer {
     text-align: center;
-    color: #34495e;
+    color: $midnightBlue;
 
     a {
-      color: #2ecc71;
+      color: $emerald;
       cursor: pointer;
     }
   }
