@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <main>
+      <Dashboard v-if="isLoggedIn" @session-timeout="logout" />
+      <Login v-else @login-event="login" />
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from './components/Login.vue'
+import Dashboard from './components/Dashboard.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Login,
+    Dashboard
+  },
+  data () {
+    return {
+      isLoggedIn: false
+    }
+  },
+  methods: {
+    /**
+     * Sets dashboard view
+    */
+    login (eventData) {
+      this.isLoggedIn = eventData || false
+    },
+    /**
+     * Sets login view
+    */
+    logout () {
+      this.isLoggedIn = false
+    }
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  font-family: 'Raleway', sans-serif;
   color: #2c3e50;
-  margin-top: 60px;
+  background: #ecf0f1;
+
+  main {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 </style>
