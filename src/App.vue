@@ -42,8 +42,8 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'Raleway', sans-serif;
-  color: #2c3e50;
-  background: #ecf0f1;
+  color: $midnightBlue;
+  background: $cloud;
 
   main {
     max-width: 1280px;
