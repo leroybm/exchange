@@ -14,6 +14,11 @@ A simple cotation viewer
 - [ ] Data collection from the API whilst the application is running
 - [ ] A simples graph for the cotations since the application has started
 
+## Nice to haves
+
+* Error messages
+* Use of routes (Ops...)
+
 ## Setup (vue-cli default)
 
 ### Project setup
