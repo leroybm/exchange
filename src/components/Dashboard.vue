@@ -1,6 +1,6 @@
 <template>
   <div id="dashboard">
-    <h1>Dashboard</h1>
+    <h1>Exchanges</h1>
 
     <ul>
       <li v-for="exchange in exchanges" v-bind:key="exchange.name">

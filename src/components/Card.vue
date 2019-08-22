@@ -18,11 +18,6 @@ export default {
     isVariationNegative () {
       return this.variation <= 0
     }
-  },
-  data () {
-    return {
-
-    }
   }
 }
 </script>
