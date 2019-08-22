@@ -3,11 +3,13 @@
     <h1>Exchanges</h1>
 
     <ul>
-      <li v-for="exchange in exchanges" v-bind:key="exchange.name">
+      <li v-for="exchange in exchanges" v-bind:key="exchange.id">
         <Card
+          :id="exchange.id"
           :title="exchange.name"
-          :value="exchange.buy || exchange.last"
+          :value="exchange.value"
           :variation="exchange.variation"
+          :graphData="exchange.normalizedDataPoints"
         />
       </li>
     </ul>
@@ -30,30 +32,34 @@ export default {
     }
   },
   methods: {
+    updateLoop () {
+      const updateLoopReference = setInterval(() => {
+        this.syncExchanges()
+        this.sessionTimeout(updateLoopReference)
+      }, 1000 * 60)
+    },
     /**
-     * Sets a watcher for session timeout, unfortunately this is done with a setInterval
+     * Timeout session, booting to the login screen
     */
-    sessionTimeout () {
-      const sessionTimeoutWatcher = setInterval(() => {
-        if (hasSessionTimedout()) {
-          clearInterval(sessionTimeoutWatcher)
-          this.$emit('session-timeout')
-        }
-      }, 1000)
+    sessionTimeout (interval) {
+      if (hasSessionTimedout()) {
+        clearInterval(interval)
+        this.$emit('session-timeout')
+      }
     },
     /**
      * Fetch data to populate exchanges
     */
     syncExchanges () {
-      getExchanges()
+      getExchanges(this.exchanges)
         .then(exchanges => {
           this.exchanges = exchanges
         })
     }
   },
   created () {
-    this.sessionTimeout()
     this.syncExchanges()
+    this.updateLoop()
   }
 }
 
