@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
   font-family: 'Raleway', sans-serif;
   color: $midnightBlue;
