@@ -25,7 +25,7 @@ function getDataFromApi () {
   return new Promise(resolve => {
     fetch(`https://api.hgbrasil.com/finance?format=json-cors&key=${API_KEY}`)
       .then(response => response.json())
-      .then(data => resolve(apiMock))
+      .then(data => resolve(data))
       .catch(() => resolve(apiMock))
   })
 }

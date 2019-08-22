@@ -1,7 +1,7 @@
 /**
  * @constant {Number} SESSION_TIMEOUT - Time to timeout session
  */
-const SESSION_TIMEOUT = 1000 * 60 * 5
+const SESSION_TIMEOUT = 1000 * 60 * 6
 
 /**
  * @alias {Storage} window.localStorage

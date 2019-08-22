@@ -75,12 +75,19 @@ export default {
   margin: 5rem auto;
   padding: 2.5rem;
   background: $pureWhite;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
+
+  @include mobile {
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0;
+    height: 100%;
+  }
 
   h1 {
-    text-align: center;
     font-size: 2rem;
     line-height: 1.5;
+    text-align: center;
   }
 
   form {
@@ -88,7 +95,7 @@ export default {
     flex-direction: column;
 
     label {
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
     }
 
     span {
@@ -97,38 +104,38 @@ export default {
 
     input {
       margin-bottom: 2rem;
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       border: 1px solid $silver;
-      border-radius: .25rem;
+      border-radius: 0.25rem;
 
       &:last-of-type {
-        margin-bottom: .75rem;
+        margin-bottom: 0.75rem;
       }
     }
 
     p {
       margin: 0 0 2rem;
       color: $midnightBlue;
-      font-size: .75rem;
+      font-size: 0.75rem;
     }
 
     button {
       width: 33%;
       margin: 0 auto;
-      background: $emerald;
       margin-bottom: 2rem;
-      border: none;
-      border-radius: .25rem;
-      padding: .5rem;
+      padding: 0.5rem;
       color: $pureWhite;
       font-size: 1.25rem;
+      background: $emerald;
+      border: none;
+      border-radius: 0.25rem;
       cursor: pointer;
     }
   }
 
   .login-footer {
-    text-align: center;
     color: $midnightBlue;
+    text-align: center;
 
     a {
       color: $emerald;

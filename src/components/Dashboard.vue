@@ -36,7 +36,7 @@ export default {
       const updateLoopReference = setInterval(() => {
         this.syncExchanges()
         this.sessionTimeout(updateLoopReference)
-      }, 1000 * 60)
+      }, 1000 * 30)
     },
     /**
      * Timeout session, booting to the login screen
@@ -74,12 +74,16 @@ export default {
 
   ul {
     display: flex;
+    flex-wrap: wrap;
     align-items: stretch;
     padding: 0;
-    flex-wrap: wrap;
 
     li {
       list-style: none;
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 }
