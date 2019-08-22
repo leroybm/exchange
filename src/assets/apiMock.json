@@ -1,0 +1,149 @@
+{
+	"by": "default",
+	"valid_key": true,
+	"results": {
+		"currencies": {
+			"source": "BRL",
+			"USD": {
+				"name": "Dollar",
+				"buy": 4.0516,
+				"sell": 4.0561,
+				"variation": -0.396
+			},
+			"EUR": {
+				"name": "Euro",
+				"buy": 4.4991,
+				"sell": 4.5005,
+				"variation": -0.348
+			},
+			"GBP": {
+				"name": "Pound Sterling",
+				"buy": 4.9311,
+				"sell": null,
+				"variation": -0.273
+			},
+			"ARS": {
+				"name": "Argentine Peso",
+				"buy": 0.0741,
+				"sell": null,
+				"variation": -0.269
+			},
+			"BTC": {
+				"name": "Bitcoin",
+				"buy": 46471.789,
+				"sell": 46471.789,
+				"variation": 1.121
+			}
+		},
+		"stocks": {
+			"IBOVESPA": {
+				"name": "BM\u0026F BOVESPA",
+				"location": "Sao Paulo, Brazil",
+				"points": 99222.25,
+				"variation": -0.25
+			},
+			"NASDAQ": {
+				"name": "NASDAQ Stock Market",
+				"location": "New York City, United States",
+				"points": 7948.56,
+				"variation": -0.68
+			},
+			"CAC": {
+				"name": "CAC 40",
+				"location": "Paris, French",
+				"variation": -0.5
+			},
+			"NIKKEI": {
+				"name": "Nikkei 225",
+				"location": "Tokyo, Japan",
+				"variation": 0.55
+			}
+		},
+		"available_sources": [
+			"BRL"
+		],
+		"bitcoin": {
+			"blockchain_info": {
+				"name": "Blockchain.info",
+				"format": [
+					"USD",
+					"en_US"
+				],
+				"last": 10820.74,
+				"buy": 10820.74,
+				"sell": 10820.74,
+				"variation": 1.121
+			},
+			"coinbase": {
+				"name": "Coinbase",
+				"format": [
+					"USD",
+					"en_US"
+				],
+				"last": 10824.5,
+				"variation": 1.14
+			},
+			"bitstamp": {
+				"name": "BitStamp",
+				"format": [
+					"USD",
+					"en_US"
+				],
+				"last": 10822.99,
+				"buy": 10822.99,
+				"sell": 10814.8,
+				"variation": 1.239
+			},
+			"foxbit": {
+				"name": "FoxBit",
+				"format": [
+					"BRL",
+					"pt_BR"
+				],
+				"last": 43734.11,
+				"variation": -0.987
+			},
+			"mercadobitcoin": {
+				"name": "Mercado Bitcoin",
+				"format": [
+					"BRL",
+					"pt_BR"
+				],
+				"last": 43870.0,
+				"buy": 43870.0,
+				"sell": 44096.97991,
+				"variation": -0.413
+			},
+			"omnitrade": {
+				"name": "OmniTrade",
+				"format": [
+					"BRL",
+					"pt_BR"
+				],
+				"last": 44660.0,
+				"buy": 44500.0,
+				"sell": 44660.0,
+				"variation": 0.79
+			},
+			"xdex": {
+				"name": "XDEX",
+				"format": [
+					"BRL",
+					"pt_BR"
+				],
+				"last": 43978.0,
+				"variation": 0.738
+			}
+		},
+		"taxes": [
+			{
+				"date": "2019-08-19",
+				"cdi": 5.9,
+				"selic": 5.9,
+				"daily_factor": 1.00022751
+			}
+		]
+	},
+	"execution_time": 0.0,
+	"from_cache": true
+}

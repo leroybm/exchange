@@ -69,7 +69,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #login {
   max-width: 400px;
   margin: 5rem auto;
