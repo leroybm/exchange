@@ -3,11 +3,13 @@
     <h1>Exchanges</h1>
 
     <ul>
-      <li v-for="exchange in exchanges" v-bind:key="exchange.name">
+      <li v-for="exchange in exchanges" v-bind:key="exchange.id">
         <Card
+          :id="exchange.id"
           :title="exchange.name"
           :value="exchange.value"
           :variation="exchange.variation"
+          :graphData="exchange.normalizedDataPoints"
         />
       </li>
     </ul>
@@ -34,7 +36,7 @@ export default {
       const updateLoopReference = setInterval(() => {
         this.syncExchanges()
         this.sessionTimeout(updateLoopReference)
-      }, 1000 * 30)
+      }, 1000 * 60)
     },
     /**
      * Timeout session, booting to the login screen

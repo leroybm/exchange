@@ -1,5 +1,18 @@
 import apiMock from '../assets/apiMock.json'
 
+/**
+ * @typedef Exchange
+ * @property {Number} id
+ * @property {String} name
+ * @property {Number} value
+ * @property {Number} variation
+ * @property {Array<Number>} dataPoints
+ * @property {Array<Number>} normalizedDataPoints
+ */
+
+/**
+ * @constant {String} API_KEY api access key
+ */
 const API_KEY = '2997417b'
 
 /**
@@ -17,6 +30,13 @@ function getDataFromApi () {
   })
 }
 
+/**
+ * Translates the api response, as well as merging old data
+ *
+ * @param {*} apiResponse
+ * @param {*} previousExchanges
+ * @returns {Array<Exchange>}
+ */
 function reduceDataToExchanges (apiResponse, previousExchanges) {
   const results = apiResponse && apiResponse.results
 
@@ -27,8 +47,9 @@ function reduceDataToExchanges (apiResponse, previousExchanges) {
   return Object.values({ ...results.currencies, ...results.bitcoin })
     .filter(exchange => typeof (exchange) === 'object')
     .map((exchange, index) => {
-      const value = exchange.buy || exchange.last || 0
-      const dataPoints = makeDataPoints(index, value, previousExchanges.dataPoints || [])
+      let value = exchange.buy || exchange.last || 0
+      const previousDataPoints = previousExchanges && previousExchanges[index] && previousExchanges[index].dataPoints
+      const dataPoints = makeDataPoints(previousDataPoints, value)
 
       return {
         id: index,
@@ -41,6 +62,12 @@ function reduceDataToExchanges (apiResponse, previousExchanges) {
     })
 }
 
+/**
+ * Normalizes an array of numbers to be between 0 and 1
+ *
+ * @param {Array<Number>} data
+ * @returns {Array<Number>}
+ */
 function normalizeData (data) {
   const valueMin = Math.min(...data)
   const valueMax = Math.max(...data)
@@ -48,9 +75,21 @@ function normalizeData (data) {
   return data.map(value => (value - valueMin) / (valueMax - valueMin))
 }
 
-function makeDataPoints (id, value, dataPoints) {
-  dataPoints[id] = Array.isArray(dataPoints[id]) ? dataPoints[id] : []
-  dataPoints[id].push(value)
+/**
+ * Makes a history of cotation data, trims when ther's more than 10 entries
+ *
+ * @param {Array<Number>} dataPoints - Data points from the last cotations
+ * @param {Number} value - Value from the current cotation
+ * @returns {Array<Number>}
+ */
+function makeDataPoints (dataPoints, value) {
+  dataPoints = Array.isArray(dataPoints) ? dataPoints : []
+
+  dataPoints.push(value)
+
+  if (dataPoints.length >= 10) {
+    dataPoints.shift()
+  }
 
   return dataPoints
 }
