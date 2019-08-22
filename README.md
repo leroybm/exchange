@@ -8,11 +8,12 @@ A simple cotation viewer
 * Session timeout
 * Fetch to a api with cotation on the main currencies and cryptocurrencies
 * Nice colours
+* Data collection from the API whilst the application is running
+* A simples graph for the cotations since the application has started
 
 ## Todo
 
-- [ ] Data collection from the API whilst the application is running
-- [ ] A simples graph for the cotations since the application has started
+- [ ] Responsiveness
 
 ## Nice to haves
 
