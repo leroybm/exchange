@@ -1,6 +1,22 @@
-# exchange
+# Exchange
 
-## Project setup
+A simple cotation viewer
+
+## Features
+
+* Login and user registration via local storage (Yes, I know it's really insecure and a bad practice)
+* Session timeout
+* Fetch to a api with cotation on the main currencies and cryptocurrencies
+* Nice colours
+
+## Todo
+
+- [ ] Data collection from the API whilst the application is running
+- [ ] A simples graph for the cotations since the application has started
+
+## Setup (vue-cli default)
+
+### Project setup
 ```
 npm install
 ```
