@@ -41,8 +41,8 @@ export default {
 
 <style lang="scss" scoped>
 #app {
-  font-family: 'Raleway', sans-serif;
   color: $midnightBlue;
+  font-family: 'Raleway', sans-serif;
   background: $cloud;
 
   main {

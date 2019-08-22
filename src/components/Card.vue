@@ -51,30 +51,36 @@ export default {
 $width: 10rem;
 $padding: 1rem;
 $widthExtended: $width * 2 + $padding * 4;
+$widthMobile: calc(100% - 4rem);
 
 #card {
+  position: relative;
   display: block;
-  background: $pureWhite;
-  border-radius: .5rem;
-  padding: $padding;
+  width: $widthExtended;
   min-width: $width;
   max-width: $width;
-  width: $widthExtended;
   height: 10rem;
   margin: 1rem;
-  position: relative;
+  padding: $padding;
   overflow: hidden;
+  background: $pureWhite;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: max-width 250ms;
+
+  @include mobile {
+    width: $widthMobile;
+    max-width: $widthMobile;
+  }
 
   &.is-expanded {
     max-width: $width * 2 + $padding * 4;
   }
 
   h2 {
-    font-size: 1.25rem;
-    margin: .25rem 0;
+    margin: 0.25rem 0;
     color: $midnightBlue;
+    font-size: 1.25rem;
   }
 
   .value {
@@ -87,8 +93,12 @@ $widthExtended: $width * 2 + $padding * 4;
 
   .graph {
     position: absolute;
-    left: $width + ($padding * 2);
     top: 2.5rem;
+    left: $width + ($padding * 2);
+
+    @include mobile {
+      left: 8.5rem;
+    }
   }
 }
 </style>
